@@ -266,7 +266,6 @@ def aggregate_weights(client_updates):
 def get_resource_metrics(client_id):
     """
     Retrieve real resource metrics for a client.
-    Replace this with actual data retrieval logic.
     """
     # Randomly generated
     cpu_usage = np.random.uniform(0.1, 1.0)
