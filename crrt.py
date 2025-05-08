@@ -273,6 +273,7 @@ def get_resource_metrics(client_id):
     network_latency = np.random.uniform(0.1, 1.0)
     return cpu_usage, memory_usage, network_latency
 
+"""
 def calculate_resource_cost(cpu_usage, memory_usage, network_latency):
     """
     Calculate the resource cost based on CPU, memory, and network metrics.
@@ -283,6 +284,32 @@ def calculate_resource_cost(cpu_usage, memory_usage, network_latency):
     latency_weight = 0.2
 
     return (cpu_usage * cpu_weight) + (memory_usage * memory_weight) + (network_latency * latency_weight)
+"""
+def calculate_resource_cost(cpu_usage, memory_usage, network_latency, delta=1e-6):
+    """
+    Compute the inverse of resource cost component (1 / R_i) used in importance weight p_{i,j}.
+
+    Args:
+        cpu_usage (float): Normalized CPU usage of the device (e.g., between 0 and 1).
+        memory_usage (float): Normalized memory usage.
+        network_latency (float): Normalized network latency.
+        delta (float): Small constant to avoid division by zero.
+
+    Returns:
+        float: Inverse of weighted resource cost.
+    """
+    cpu_weight = 0.4
+    memory_weight = 0.4
+    latency_weight = 0.2
+
+    resource_cost = (
+        (cpu_usage * cpu_weight) +
+        (memory_usage * memory_weight) +
+        (network_latency * latency_weight)
+    )
+
+    return 1.0 / (resource_cost + delta)
+
 
 def select_clients_based_on_budget(num_clients, X_splits, y_binary_splits, y_continuous_splits, budget_threshold):
     """
