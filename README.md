@@ -36,4 +36,22 @@ This framework aims to revolutionize **bedside monitoring and adjustment** of ci
 - Maximize **treatment efficacy**
 - Enable **personalized and adaptive care** in critical environments
 
+## Citation
+
+If you find this work useful, please consider **starring the repository** and citing our paper:
+
+```bibtex
+@article{mali2025edge,
+  title={Edge computing with federated learning for early detection of citric acid overdose and adjustment of regional citrate anticoagulation},
+  author={Mali, Saroj and Mali, Niroj and Zeng, Feng and Zhang, Ling},
+  journal={BMC Medical Informatics and Decision Making},
+  volume={25},
+  number={1},
+  pages={320},
+  year={2025},
+  publisher={Springer}
+}
+  publisher={Springer}
+}
+
 
