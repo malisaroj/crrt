@@ -51,7 +51,4 @@ If you find this work useful, please consider **starring the repository** and ci
   year={2025},
   publisher={Springer}
 }
-  publisher={Springer}
-}
-
 
